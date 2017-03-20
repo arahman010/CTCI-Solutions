@@ -25,7 +25,10 @@ public class OneAway {
     
     
     // Function which is the solution to the problem
-    public boolean isOneAway(String s, String t) {
+    // Wrong Solution
+    // kept here to remind me what I did wrong
+    
+ /*   public boolean isOneAway(String s, String t) {
         int[] sChar_set = new int[128];
         int[] tChar_set = new int[128];
         if(s.length() - t.length() > 1 || s.length() - t.length() < -1) {
@@ -60,14 +63,59 @@ public class OneAway {
             return true;
         }
         
+    }           */
+    
+    public boolean isOneAway(String s, String t) {
+        int lengthDiff = s.length() - t.length();
+        if (lengthDiff == 0)
+            return oneReplaceAway(s,t);
+        else if (lengthDiff == 1)
+            return oneEditAway(s,t);
+        else if (lengthDiff == -1)
+            return oneEditAway(t,s);
+        else
+            return false;
+    
+    }
+    
+    public boolean oneReplaceAway(String s, String t) {
+        boolean oneFound = false;
+        for(int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != t.charAt(i)){
+                if(!oneFound){
+                    oneFound = true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean oneEditAway(String s, String t) {
+        boolean oneDisFound = false;
+        int j = 0;
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) != t.charAt(j)){
+                if(!oneDisFound){
+                    oneDisFound = true;
+                    i++;
+                } else {
+                    return false;
+                }
+            } else {
+                j++;
+            }
+        }
+        return true;
     }
     
     public static void main(String args[]){
         
         OneAway newClass = new OneAway();
         
-        String inputString1 = "pale";
-        String inputString2 = "bale";
+        String inputString1 = "aabc";
+        String inputString2 = "aac";
         
         if(newClass.isOneAway(inputString1,inputString2)){
             System.out.println(inputString1 + " & " + inputString2 + " are one/zero away!");
