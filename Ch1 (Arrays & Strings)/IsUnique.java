@@ -19,18 +19,27 @@ public class IsUnique {
     
     public boolean isUnique(String S) {
         int[] charArray = new int[128];
-        for(int i = 0; i < 128; i++) {
-            charArray[i] = 0;
-        }
-        for(int j = 0; j < S.length(); j++) {
+        
+        // This is also right
+      /*  for(int j = 0; j < S.length(); j++) {
             int val = S.charAt(j);
             charArray[val]++;
             //System.out.println(val);
             if(charArray[val] > 1) {
                 return false;
+            }           */
+        int ascii = 0;
+        for(char c: S.toCharArray()) {
+            ascii = (int) c;
+            if(charArray[ascii] != 0){
+                return false;
             }
-            
+            else {
+                charArray[ascii]++;
+            }
+        
         }
+        
         return true;
     }
     
