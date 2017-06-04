@@ -12,23 +12,43 @@
 import java.io.*;
 
 // Declare Class Name
-public class FileName {
+public class StringComp {
     
     // Constructor
-    public FileName() {
+    public StringComp() {
         
     }
     
     
     // Function which is the solution to the problem
-    public boolean funcName() {
+    public String getCompressedString(String s) {
+        StringBuilder rsltString = new StringBuilder();
+        int counter = 1;
+        String temp = "";
+        int i;
         
+        for(i = 1; i < s.length(); i++){
+            if(s.charAt(i) == s.charAt(i-1)){
+                counter++;
+            }
+            else {
+                temp = s.charAt(i-1) + Integer.toString(counter);
+                rsltString.append(temp);
+                counter = 1;
+            }
+        }
+        
+        temp = s.charAt(i-1) + Integer.toString(counter);
+        rsltString.append(temp);
+        
+        return rsltString.toString();
     }
     
     public static void main(String args[]){
         
-        FileName newClass = new FileName();
+        StringComp newClass = new StringComp();
+        String input = "aabcccccaaae";
         
-        System.out.println("Print Something");
+        System.out.println("Compressed String: " + newClass.getCompressedString(input));
     }
 }
