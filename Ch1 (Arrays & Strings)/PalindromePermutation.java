@@ -38,25 +38,19 @@ public class PalindromePermutation {
         }
         
         boolean middleOneFound = false;
-        int totalNonSpaces = s.length() - totalSpaces;
         
         for(int j = 0; j < s_array.length; j++) {
-            if( totalNonSpaces % 2 == 0) {                    // Even non-spaces
-                if(s_array[j] % 2 != 0) {
+                                                       // Odd non-spaces
+            if(s_array[j] %2 != 0) {
+                if(!middleOneFound){
+                    middleOneFound = true;
+                }
+                else {
                     return false;
                 }
             }
-            else {                                             // Odd non-spaces
-                if(s_array[j] %2 != 0) {
-                    if(!middleOneFound){
-                        middleOneFound = true;
-                    }
-                    else {
-                        return false;
-                    }
-                }
-            }
         }
+        
         
         // If the program comes here that means it is permutation of some palindrome
         return true;
@@ -67,13 +61,15 @@ public class PalindromePermutation {
         
         PalindromePermutation newClass = new PalindromePermutation();
         
-        String inputString = "ababbacddc";
+        String inputString = "abadbbacddc";
         
         if(newClass.isPalPer(inputString)){
             System.out.println(inputString + " is permutation of some palindrome!");
+       
         }
         else {
             System.out.println(inputString + " is not permutation of some palindrome!");
+            
         }
     
     }
