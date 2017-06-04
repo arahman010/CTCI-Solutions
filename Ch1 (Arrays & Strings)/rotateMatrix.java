@@ -1,11 +1,11 @@
-// Date:
+// Date: 06/04/17
 // Problem
-// Question:
+// Question: Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
-// Assumption Made:
+// Assumption Made: Roate is Clockwise
 
-// Time Complexity -->
-// Space Complexity -->
+// Time Complexity --> O(n^2)
+// Space Complexity --> O(1)
 
 // Import necessary libraries
 import java.io.*;
