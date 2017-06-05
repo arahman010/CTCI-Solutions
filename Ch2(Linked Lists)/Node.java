@@ -31,6 +31,7 @@ public class Node {
         while(n.next != null) {
             System.out.print(n.data);
             System.out.print(" , ");
+            n = n.next;
         }
     }
     

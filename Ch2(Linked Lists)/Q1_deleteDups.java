@@ -46,26 +46,24 @@ public class Q1_deleteDups {
         
         Q1_deleteDups newClass = new Q1_deleteDups();
         
-        Node newNode = new Node(1);
-        Node n = newNode;
+        Node n = new Node(1);
+        Node newNode = n;
         
         for(int i = 2; i < 10; i++){
-            Node m = new Node(i);
+            Node m = new Node(i%3);
             n.next = m;
             n = n.next;
         }
         
-        Node m = new Node(5);
-        n.next = m;
-        n = n.next;
-        
+
         System.out.print("Initial List: ");
         newNode.printList();
         
-        newClass.deleteDups(n);
-        
+        newClass.deleteDups(newNode);
+        System.out.println();
         System.out.print("Final List: ");
         newNode.printList();
+        System.out.println();
         
     }
 }
