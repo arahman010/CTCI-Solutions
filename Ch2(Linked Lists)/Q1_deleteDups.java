@@ -1,4 +1,4 @@
-// Date:
+// Date: 06/05/2017
 // Problem
 // Question: Write code to delete duplicates from an unsorted linked list.
 // How would you solve this problem if a temporary buffer is not allowed?
@@ -22,7 +22,7 @@ public class Q1_deleteDups {
     
     
     // Function which is the solution to the problem
-    public void deleteDups(Node head) {
+    public void deleteDups1(Node head) {
         if(head.next == null)
             return;
         
@@ -42,6 +42,28 @@ public class Q1_deleteDups {
         return;
     }
     
+    public void deleteDups2(Node head) {
+        if(head.next == null)
+            return;
+        
+        Node current = head;
+        
+        
+        while(current != null) {
+            Node runner = current;
+            
+            while(runner.next != null) {
+                if(runner.next.data == current.data) {
+                    runner.next = runner.next.next;
+                }
+                else {
+                    runner = runner.next;
+                }
+            }
+            current = current.next;
+        }
+    }
+    
     public static void main(String args[]){
         
         Q1_deleteDups newClass = new Q1_deleteDups();
@@ -50,18 +72,30 @@ public class Q1_deleteDups {
         Node newNode = n;
         
         for(int i = 2; i < 10; i++){
-            Node m = new Node(i%3);
+            Node m = new Node(i%4);
             n.next = m;
             n = n.next;
         }
         
 
-        System.out.print("Initial List: ");
+        
+    /*    System.out.print("(1)Initial List: ");
         newNode.printList();
         
-        newClass.deleteDups(newNode);
+        newClass.deleteDups1(newNode);
         System.out.println();
-        System.out.print("Final List: ");
+        System.out.print("(1)Final List: ");
+        newNode.printList();
+        System.out.println();       */
+        
+        // For 2
+        
+        System.out.print("(2)Initial List: ");
+        newNode.printList();
+        
+        newClass.deleteDups2(newNode);
+        System.out.println();
+        System.out.print("(2)Final List: ");
         newNode.printList();
         System.out.println();
         
