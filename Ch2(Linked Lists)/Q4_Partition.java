@@ -58,7 +58,7 @@ public class Q4_Partition {
             n = n.next;
         }
         
-        randomNum = ThreadLocalRandom.current().nextInt(0, 10 + 1);
+        randomNum = ThreadLocalRandom.current().nextInt(0, 20 + 1);
         
         System.out.print("(1)Initial List: ");
         head.printList();

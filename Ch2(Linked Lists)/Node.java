@@ -28,7 +28,7 @@ public class Node {
     
     public void printList() {
         Node n = this;
-        while(n.next != null) {
+        while(n != null) {
             System.out.print(n.data);
             System.out.print(" , ");
             n = n.next;
