@@ -12,16 +12,16 @@ import java.io.*;
 import java.util.*;
 
 // Declare Class Name
-public class FileName {
+public class FlipBit {
     
     // Constructor
-    public FileName() {
+    public FlipBit() {
         
     }
     
     
     // Function which is the solution to the problem
-    public boolean funcName() {
+    public int flipBit(int x) {
     
     }
     
