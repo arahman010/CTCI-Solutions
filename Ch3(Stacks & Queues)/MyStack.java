@@ -10,14 +10,14 @@ public class MyStack<T> {
 
     private static class StackNode<T> {
         private T data;
-        private StackNode next;
+        private StackNode<T> next;
 
-        public StackNode<T>(T data){
+        public StackNode(T data){
             this.data = data;
         }
     }
 
-    private StackNode top;
+    private StackNode<T> top;
 
     // Push 
     public void push(T item){
@@ -54,14 +54,16 @@ public class MyStack<T> {
         while(temp != null){
             System.out.print(temp.data);
             System.out.print(" , ");
+            temp = temp.next;
         }
+        System.out.println();
     }
 
-  
+  // There is no custom constructor for MyStack Class
     
     public static void main(String args[]){
         
-        MyStack newClass = new MyStack<int>();
+        MyStack<Integer> newClass = new MyStack<Integer>();
         newClass.push(1);
         newClass.push(2);
         newClass.push(3);
