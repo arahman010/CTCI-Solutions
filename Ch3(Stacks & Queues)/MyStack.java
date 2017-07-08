@@ -8,16 +8,17 @@ import java.util.*;
 // Declare Class Name
 public class MyStack<T> {
 
-    private static class StackNode<T> {
-        private T data;
-        private StackNode<T> next;
+    protected static class StackNode<T> {       // Protected: to make accessible to child classes
+        protected T data;
+        protected StackNode<T> next;
 
         public StackNode(T data){
             this.data = data;
         }
     }
 
-    private StackNode<T> top;
+    // private StackNode<T> top;
+    protected StackNode<T> top;         // Protected: For making it accessible to child classes
 
     // Push 
     public void push(T item){
