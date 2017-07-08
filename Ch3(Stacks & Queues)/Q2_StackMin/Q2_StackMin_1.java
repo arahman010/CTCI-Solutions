@@ -13,7 +13,7 @@ import java.io.*;
 import java.util.*;
 
 // Declare Class Name
-public class Q2_StackMin extends MyStack<NodeWithMin>{
+public class Q2_StackMin_1 extends MyStack<NodeWithMin>{
     
     // No Custom Constructor
     // Changing push for this child class
@@ -48,7 +48,7 @@ public class Q2_StackMin extends MyStack<NodeWithMin>{
     
     public static void main(String args[]){
         
-        Q2_StackMin newClass = new Q2_StackMin();
+        Q2_StackMin_1 newClass = new Q2_StackMin_1();
 
         newClass.push(10);
         newClass.push(12);
