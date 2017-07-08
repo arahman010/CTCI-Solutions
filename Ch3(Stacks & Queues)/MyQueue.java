@@ -44,6 +44,7 @@ public class MyQueue<T> {
             last = null;
         }
         first = first.next;
+        return firstData;
     }
 
     //peek
