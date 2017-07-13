@@ -15,7 +15,7 @@ public class Node {
     public String name;
     public Node[] adj;
     public boolean visited;
-    public int state;
+    public State state;
     
     // Constructor
     public Node() {
@@ -27,16 +27,4 @@ public class Node {
         visited = false;
     }
     
-    
-    // Function which is the solution to the problem
-//    public boolean funcName() {
-//    
-//    }
-//    
-//    public static void main(String args[]){
-//        
-//        FileName newClass = new FileName();
-//        
-//        System.out.println("Print Something");
-//    }
 }

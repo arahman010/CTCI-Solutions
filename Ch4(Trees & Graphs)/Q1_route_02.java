@@ -19,10 +19,10 @@ public class Q1_route_02 {
         
     }
     
-    enum State{ Unvisited, Visited, Visiting };
+    // public enum State{ Unvisited, Visited, Visiting };
     
     // Function which is the solution to the problem
-    public boolean serachForNode(Grpah g, Node start, Node end) {
+    public boolean serachForNode(Graph g, Node start, Node end) {
         if(start == end){
             return true;
         }
@@ -47,13 +47,14 @@ public class Q1_route_02 {
                         }
                         else {
                             v.state = State.Visiting;
-                            q.add = v;
+                            q.add(v);
                         }
                     }
                 }
-                u.State = State.Visited;
+                u.state = State.Visited;
             }
         }
+        return false;
         
     }
     
