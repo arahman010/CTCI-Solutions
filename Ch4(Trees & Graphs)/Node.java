@@ -15,6 +15,7 @@ public class Node {
     public String name;
     public Node[] adj;
     public boolean visited;
+    public int state;
     
     // Constructor
     public Node() {

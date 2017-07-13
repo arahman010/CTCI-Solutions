@@ -2,10 +2,10 @@
 // Problem
 // Question: 4.1 Given a directed graph, design an algorithm to find out whether there is a route between two nodes                                                                                                           
 
-// Assumption Made:
+// Assumption Made: start and end nodes are given
 
-// Time Complexity -->
-// Space Complexity -->
+// Time Complexity --> O(n)
+// Space Complexity --> O(n)
 
 // Import necessary libraries
 import java.io.*;
@@ -19,7 +19,7 @@ public class Q1_route {
     }
     
     
-    // Function which is the solution to the problem
+    // My implementation of DFS
     public boolean route(Node A, Node B) {
         if ( A == null)
             return false;
@@ -31,7 +31,7 @@ public class Q1_route {
         for(int i = 0; i < A.adj.length; i++) {
             Node a = A.adj[i];
             if(a.visited == false) {
-                a.visited = true;
+                // a.visited = true;
                 result = route(a, B);
                 if (result)
                     break;
