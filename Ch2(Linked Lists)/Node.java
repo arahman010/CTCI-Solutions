@@ -33,6 +33,8 @@ public class Node {
             System.out.print(" , ");
             n = n.next;
         }
+
+        System.out.println();
     }
     
 /*    public static void main(String args[]){
