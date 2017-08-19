@@ -57,11 +57,11 @@ public class Q6_Palindrome {
             n = n.next;
         }
 
-        // for(int i = 9; i > 0; i--){
-        //     Node m = new Node(i);
-        //     n.next = m;
-        //     n = n.next;
-        // }
+        for(int i = 9; i > 0; i--){
+            Node m = new Node(i);
+            n.next = m;
+            n = n.next;
+        }
 
         head.printList();
 
